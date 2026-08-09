@@ -11,7 +11,6 @@ export default function Navbar() {
           SENTIA BEAUTY
         </Link>
 
-
         {/* MENU */}
         <div className="navbar-menu">
 
@@ -22,6 +21,10 @@ export default function Navbar() {
           <Link href="/shop" className="nav-link">
             Shop
           </Link>
+
+          <Link href="/cart">
+            🛒 Cart
+            </Link>
 
           <Link href="/about" className="nav-link">
             About
