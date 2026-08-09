@@ -1,4 +1,4 @@
-import { prisma } from "../lib/prisma";
+import { prisma } from "@/lib/prisma";
 import CartButton from "../components/CartButton";
 
 export default async function ShopPage() {
