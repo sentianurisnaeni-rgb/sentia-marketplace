@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Kategori {
+  id_kategori   Int      @id @default(autoincrement())
+  nama_kategori String
+  produk        Produk[]
+}
+
+model Produk {
+  id_produk    Int       @id @default(autoincrement())
+  id_kategori  Int
+  nama_produk  String
+  brand        String
+  harga        Decimal
+  gambar       String?
+  deskripsi    String?
+  kategori     Kategori  @relation(fields: [id_kategori], references: [id_kategori])
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  nama     String
+  email    String @unique
+  password String
+}
