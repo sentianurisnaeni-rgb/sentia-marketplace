@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
   output   = "../app/generated/prisma"
 }
 
@@ -14,14 +14,14 @@ model Kategori {
 }
 
 model Produk {
-  id_produk    Int       @id @default(autoincrement())
-  id_kategori  Int
-  nama_produk  String
-  brand        String
-  harga        Decimal
-  gambar       String?
-  deskripsi    String?
-  kategori     Kategori  @relation(fields: [id_kategori], references: [id_kategori])
+  id_produk   Int      @id @default(autoincrement())
+  id_kategori Int
+  nama_produk String
+  brand       String
+  harga       Decimal
+  gambar      String?
+  deskripsi   String?
+  kategori    Kategori @relation(fields: [id_kategori], references: [id_kategori])
 }
 
 model User {
